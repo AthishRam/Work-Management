@@ -1,0 +1,22 @@
+<br><div class="form-group">
+<input type="text" class="form-control" (ngModel)="searchTerm" (keyup)="search($event)" placeholder="Search employees"></div>
+
+  <div class="card-container">
+  <div *ngFor="let employee of employees.employees | filter:searchTerm:'name'" (click)="navigateTask(employee)"><br>
+  <mat-card>
+    <mat-card-title-group>
+      <mat-card-title>{{employee.name}}</mat-card-title>
+      <mat-card-subtitle>({{employee.field}})</mat-card-subtitle>
+     <div class="image"> <img mat-card-md-image src= {{employee.image}}></div>
+    </mat-card-title-group>
+    <mat-card-content>
+    <b style="font-size: 22px">Email Id : {{employee.email}}</b><br>
+    <b style="font-size: 22px">DOB : {{employee.dob}}</b><br>
+    <b style="font-size: 22px">Experience : {{employee.experience}} Years</b><br>
+    <b style="font-size: 22px">Phone : {{employee.phonenumber}}</b><br>
+    <b style="font-size: 22px">Field : {{employee.profession}}</b><br>
+    <b style="font-size: 22px">Previous Company : {{employee.previousCompany}}</b>
+    </mat-card-content>
+  </mat-card>
+  </div>
+  </div>

@@ -1,0 +1,15 @@
+<mat-menu #loginMenu="matMenu">
+    <nav><a routerLink="manager/login" mat-menu-item>Manager</a></nav>
+    <nav><a routerLink="employee/login" mat-menu-item>Employee</a></nav>
+</mat-menu>
+<mat-toolbar class = "navbar" style="background-color:#1b7bf3; color:#fff">
+<span>Task Management</span>
+
+<div *ngIf="valid=='true'">
+<small>You are not logged in.</small><a class="menu" mat-flat-button [matMenuTriggerFor]="loginMenu"> (login)</a>
+</div>
+
+<div *ngIf="valid=='false'">
+<small>You are logged in.</small><a style="text-decoration: none; font-size: 17px; color:#fff" (click)="disable()" routerLink=""> (logout)</a>
+</div>
+</mat-toolbar> 

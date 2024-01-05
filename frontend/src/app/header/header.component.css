@@ -1,0 +1,10 @@
+.navbar{
+    justify-content: space-between;
+}
+
+.menu{
+    background-color:transparent;
+    font-size:16px; 
+    color:white; 
+    right:12px;
+}

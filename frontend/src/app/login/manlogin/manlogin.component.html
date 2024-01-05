@@ -1,0 +1,23 @@
+<div class="center">
+   <div class="container">
+      <div class="text">Manager Login</div>
+      
+      <form [formGroup]="loginForm" novalidate #myform="ngForm" (ngSubmit)="login()">
+         <div class="data">
+            <label>UserName</label>
+            <input formControlName="username" type="text">
+            <small class="text-danger" *ngIf="username && myform.submitted && username.hasError('required')">*Enter your UserName</small>
+            </div>
+         <div class="data">
+            <label>Password</label>
+            <input formControlName="password" type="password">
+            <small class="text-danger" *ngIf="password && myform.submitted && password.hasError('required')">*Enter your Password</small><br>
+            <small  class="text-danger" *ngIf= "invalid">*UserName or Password is incorrect</small> 
+         </div>
+         <div class="btn">
+            <div class="inner"></div>
+            <button type="submit">login</button>
+         </div>
+      </form>
+   </div>
+</div>
